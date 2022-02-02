@@ -38,15 +38,6 @@ module Packwerk
     )
 
     def initialize(configs = {}, config_path: nil)
-      if configs["load_paths"]
-        warning = <<~WARNING
-          DEPRECATION WARNING: The 'load_paths' key in `packwerk.yml` is deprecated.
-          This value is no longer cached, and you can remove the key from `packwerk.yml`.
-        WARNING
-
-        warn(warning)
-      end
-
       inflection_file = File.expand_path(configs["inflections_file"] || "config/inflections.yml", @root_path)
       if configs["inflections_file"]
         warning = <<~WARNING
@@ -76,10 +67,12 @@ module Packwerk
       @parallel = configs.key?("parallel") ? configs["parallel"] : true
 
       @config_path = config_path
+
+      @load_paths = configs["load_paths"]
     end
 
     def load_paths
-      @load_paths ||= ApplicationLoadPaths.extract_relevant_paths(@root_path, "test")
+      @load_paths
     end
 
     def parallel?
