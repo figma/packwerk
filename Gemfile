@@ -15,7 +15,8 @@ gem("rubocop-performance", require: false)
 gem("rubocop-sorbet", require: false)
 gem("mocha", require: false)
 gem("rubocop-shopify", require: false)
-gem("tapioca", require: false)
+
+gem 'tapioca', '~> 0.9.2', require: false
 
 group :development do
   gem("byebug", require: false)
