@@ -166,6 +166,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.8-x86_64-linux)
+      racc (~> 1.4)
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
@@ -174,7 +176,7 @@ GEM
       method_source (~> 1.0)
     psych (3.3.2)
     racc (1.6.0)
-    rack (2.2.4)
+    rack (2.2.7)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails-dom-testing (2.0.3)
@@ -216,6 +218,7 @@ GEM
       sorbet-static (= 0.5.10297)
     sorbet-runtime (0.5.10297)
     sorbet-static (0.5.10297-universal-darwin-21)
+    sorbet-static (0.5.10297-x86_64-linux)
     sorbet-static-and-runtime (0.5.10297)
       sorbet (= 0.5.10297)
       sorbet-runtime (= 0.5.10297)
@@ -256,6 +259,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   byebug
